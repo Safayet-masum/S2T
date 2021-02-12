@@ -1,3 +1,5 @@
+%Computes Euclidean distance between two matrices
+
 function d = EDistance(x, y)
 
 [R1, C1] = size(x);
@@ -6,6 +8,7 @@ function d = EDistance(x, y)
 if (R1 ~= R2)
     error('Matrix dimensions do not match.')
 end
+
 
 d = zeros(C1, C2);
 
@@ -22,4 +25,5 @@ else
 end
 
 d = d.^0.5;
+
 end
