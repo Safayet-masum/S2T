@@ -4,9 +4,9 @@ word = inputdlg(userPrompt, titleBar, 1);
 ex=num2str(randi(10000));
 filename=strcat(char(word),ex);
 filename=strcat(filename,'.wav');
-aud=record(2,8000);
+aud=record(1,8000);
 audiowrite(filename,aud,8000, 'Title', word);
-pause(4);
+pause(2);
 sound(aud);
 main;
 
