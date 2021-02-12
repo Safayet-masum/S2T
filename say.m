@@ -5,7 +5,7 @@ function d = say(y)
     [ref,fs]=audioread(files(i).name);
     info=audioinfo(files(i).name);
     x=[info.Title];
-    if x==y
+    if size(x)==size(y) && x==y
       sound(ref);
       break;
      end
