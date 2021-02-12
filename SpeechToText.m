@@ -57,7 +57,7 @@ for(j=1:8000:len*8000)
     Freff=filter(reff);
     
     %Similarity calculator
-    dis=EDistance(freq,reff)
+    dis=EDistance(Ffreq,Freff)
     
     %Modulus
     d=abs(dis);
@@ -75,7 +75,7 @@ for(j=1:8000:len*8000)
    end
    
    %Adding best result to sentence
-   result=strcat(result,x);
+   result=strcat(result,' ',x);
    
 end
 

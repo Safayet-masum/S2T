@@ -22,7 +22,7 @@ aud=record(1,8000);
 %Writing into file
 %extra parameter Title holds the original word accessible from audioinfo
 audiowrite(filename,aud,8000, 'Title', word);
-pause(2);
+pause(1);
 
 %Playback the sound
 sound(aud);

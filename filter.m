@@ -19,17 +19,17 @@ function d = filter(y)
   %Copy to store result
   aud2=aud;
   %Moving average filter Window size 40
-  for(j=25:1:8000-21)
+  for(j=62:1:8000-62)
   
     %Sum of window
     bit=0;
     
-    for(i=j-20:1:j+20)
+    for(i=j-60:1:j+60)
       bit+=aud(i);
     end
     
     %Average
-    bit/=40;
+    bit/=120;
     
     aud2(j)=bit;
     
