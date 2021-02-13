@@ -2,10 +2,10 @@
 %First goes through a High band pass to reduce noise
 %Then through a Moving average filter so no noice dominates
 
-function d = filter(y)
+function d = filter(aud)
   
   %Converting to time domain for high pass filter
-  aud=ifft(y);
+  %aud=ifft(y);
   
   %High pass cap 0.0001
   for(j=1:1:8000)
@@ -37,7 +37,8 @@ function d = filter(y)
   
   
   %Converting to freq domain
-  d=fft(aud2);
+  %d=fft(aud2);
+  d=aud2;
   
   
 endfunction

@@ -32,11 +32,12 @@ for(j=1:8000:len*8000)
   %8000 frames long
   window=aud(j:j+8000-1);
   
-  %Convering to frequency spectrum
-  wfreq=fft(window);
-  
   %Applying filter to reduce noise
-  Ffreq=filter(wfreq);
+  Ffreq=filter(window);
+  
+  %Convering to frequency spectrum
+  %wfreq=fft(window);
+  
   
   %Best match finder
   min=9999999;
@@ -50,11 +51,11 @@ for(j=1:8000:len*8000)
     %Loading audio data
     [ref,fs]=audioread(files(i).name);
     
-    %Reference data in frequency spectrum
-    reff=fft(ref);
-    
     %Applying filter to reduce noise
-    Freff=filter(reff);
+    Freff=filter(ref);
+    
+    %Reference data in frequency spectrum
+    %reff=fft(ref);
     
     %Similarity calculator
     dis=EDistance(Ffreq,Freff)

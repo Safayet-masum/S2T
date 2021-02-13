@@ -1,6 +1,46 @@
 %Computes Euclidean distance between two matrices
 
-function d = EDistance(x, y)
+function d = EDistance(Xin, Yin)
+
+
+%Finding significant portion 
+p=1;
+q=1;
+
+for(j=1:1:3800)
+  
+    %voice detected
+    if Xin(j)<0.0001 
+      p=j;
+    else
+      break;
+    end
+    
+end
+
+%cuting significant portion
+x=Xin(p:p+4000-1);
+
+for(j=1:1:3800000)
+  
+    %voice detected
+    if Yin(j)<0.0001 
+      q=j;
+    else
+      break;
+    end
+    
+end
+
+%cuting significant portion
+y=Yin(q:q+4000-1);
+
+
+%converting to frequency domain
+
+x=fft(x);
+
+y=fft(y);
 
 [R1, C1] = size(x);
 [R2, C2] = size(y); 
